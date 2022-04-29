@@ -70,7 +70,6 @@
         android:id="@+id/token"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Token: 000"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.986"
