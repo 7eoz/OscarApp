@@ -19,6 +19,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            idFilme = extras.getInt("filme");
+            idDiretor = extras.getInt("diretor");
+        }
+
         filmeButton = findViewById(R.id.votarFilme);
         diretorButton = findViewById(R.id.votarDiretor);
         votoButton = findViewById(R.id.confirmarVoto);
@@ -59,11 +65,6 @@ public class MainActivity extends AppCompatActivity {
         votoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                // VARIAVEIS
-                tokenField.getText(); // Valor do token (String) NÃO PASSAR
-                // idFilme            // Id do filme    (int)
-                // idDiretor          // Id do diretor  (int)
 
                 Intent intent = new Intent(MainActivity.this, ConfirmActivity.class);
                 intent.putExtra("filme",idFilme);
