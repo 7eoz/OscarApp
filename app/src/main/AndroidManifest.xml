@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OscarApp">
         <activity
+            android:name=".VoteMovieDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VoteMovieActivity"
+            android:exported="false" />
+        <activity
             android:name=".ConfirmActivity"
             android:exported="false" />
         <activity
@@ -29,9 +35,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false" >
-        </activity>
-
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -39,14 +39,9 @@ public class MainActivity extends AppCompatActivity {
         filmeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //---------------------------------------//
-                // SETAR ACTIVITY DE FILME AQUI:
-
-                //Intent intent = new Intent(MainActivity.this, <NOME DA ACTIVITY>.class);
-                //startActivity(intent);
-
-                //RETORNAR ID DE FILME PARA VARIAVEL : idFilme
-                //---------------------------------------//
+                Intent intent = new Intent(MainActivity.this, VoteMovieActivity.class);
+                intent.putExtra("filme",idFilme);
+                startActivity(intent);
             }
         });
         diretorButton.setOnClickListener(new View.OnClickListener() {
