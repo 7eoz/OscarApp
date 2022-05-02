@@ -7,76 +7,46 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/Banner"
-        android:layout_width="419dp"
-        android:layout_height="244dp"
-        android:layout_marginBottom="495dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/oscars_2020" />
-    <LinearLayout
-        android:layout_width="415dp"
-        android:layout_height="451dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="280dp"
-        android:layout_marginEnd="1dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="50px" />
-
-        <Button
-            android:id="@+id/votarFilme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Votar Filme" />
-
-        <Button
-            android:id="@+id/votarDiretor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Votar Diretor" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="50px" />
-
-        <Button
-            android:id="@+id/confirmarVoto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#009607"
-            android:text="Confirmar Voto"
-            tools:ignore="TextContrastCheck"
-            tools:textAlignment="gravity" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="500px" />
-
-        <Button
-            android:id="@+id/sairBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sair"
-            tools:textAlignment="gravity" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/token"
+        android:id="@+id/oscarsLogoMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.986"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="140dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.356" />
+        app:srcCompat="@drawable/oscars_logo" />
 
+    <TextView
+        android:id="@+id/votedMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oscarsLogoMain" />
 
+    <TextView
+        android:id="@+id/votedDirector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/votedMovie" />
+
+    <Button
+        android:id="@+id/logoffButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Logoff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/votedDirector" />
 </androidx.constraintlayout.widget.ConstraintLayout>
