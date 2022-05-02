@@ -29,7 +29,12 @@ public class VoteMovieActivity extends AppCompatActivity {
         movieList.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(VoteMovieActivity.this, VoteDirectorDetailActivity.class);
             HashMap<String, Object> obj = (HashMap<String, Object>) movieList.getAdapter().getItem(i);
-            intent.putExtra("nome",movieList.getAdapter().getItem(i).toString());
+            Bundle b = new Bundle();
+            b.putString("name",(String) obj.get("name"));
+            b.putString("id",(String) obj.get("id"));
+            b.putString("photo",(String) obj.get("photo"));
+            b.putString("genero",(String) obj.get("genre"));
+            intent.putExtras(b);
             startActivity(intent);
         });
     }

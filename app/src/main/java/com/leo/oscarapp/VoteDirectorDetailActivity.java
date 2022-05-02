@@ -11,7 +11,7 @@ public class VoteDirectorDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vote_director_detail);
-        TextView t =findViewById(R.id.directorNameDetail);
+        TextView t =findViewById(R.id.movieNameDetail);
 
         t.setText(getIntent().getStringExtra("nome"));
     }
