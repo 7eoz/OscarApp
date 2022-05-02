@@ -4,6 +4,7 @@
 
     <item
         android:id="@+id/voteMovieButton"
+        android:icon="@drawable/movie_icon"
         android:title="Vote Movie"
         app:showAsAction="always" />
     <item
