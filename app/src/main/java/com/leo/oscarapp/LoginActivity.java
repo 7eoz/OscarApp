@@ -19,6 +19,16 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //USADO PELO BOTÃO DE SAÍDA DA APLICAÇÃO
+        //---------------------------------------//
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            if(extras.getBoolean("EXIT")){
+                finish();
+                System.exit(0);
+            }
+        }
+        //---------------------------------------//
 
         loginButton = findViewById(R.id.loginButton);
         login = findViewById(R.id.loginInput);
