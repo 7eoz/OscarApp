@@ -21,7 +21,6 @@ public class GetDirectors extends AsyncTask<String, Void, Void> {
 
     private ProgressDialog progressDialog;
     private Context context;
-    private MovieAdapter movieAdapter;
     private ListView listView;
     ArrayList<HashMap<String, String>> directorList;
 
@@ -80,5 +79,7 @@ public class GetDirectors extends AsyncTask<String, Void, Void> {
                 new String[]{"name"},
                 new int[]{R.id.directorName}
         );
+        listView.setAdapter(adapter);
     }
+
 }

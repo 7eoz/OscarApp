@@ -2,7 +2,10 @@ package com.leo.oscarapp.util;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -15,6 +18,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -60,6 +68,7 @@ public class GetMovies extends AsyncTask<String, Void, Void> {
                     String genre = object.getString("genero");
                     String photo = object.getString("foto");
 
+
                     HashMap<String, String> movie = new HashMap<>();
                     movie.put("id", id);
                     movie.put("name", name);
@@ -86,11 +95,29 @@ public class GetMovies extends AsyncTask<String, Void, Void> {
                 R.layout.movie_item,
                 new String[]{"name", "genre", "photo"},
                 new int[]{R.id.movieName, R.id.movieGenre, R.id.movieImage}
-        );
+        ) {
+        };
         listView.setAdapter(adapter);
 
 //        MovieAdapter movieAdapter = new MovieAdapter((List<Movie>)movieList);
 //        listView.setAdapter(movieAdapter);
 //        listView.setAdapter(adapter);
+    }
+
+    private Bitmap getImageBitmap(String url) {
+        Bitmap bm = null;
+        try {
+            URL aURL = new URL(url);
+            URLConnection conn = aURL.openConnection();
+            conn.connect();
+            InputStream is = conn.getInputStream();
+            BufferedInputStream bis = new BufferedInputStream(is);
+            bm = BitmapFactory.decodeStream(bis);
+            bis.close();
+            is.close();
+        } catch (IOException e) {
+            Log.e( "Error getting bitmap", e.getLocalizedMessage());
+        }
+        return bm;
     }
 }
