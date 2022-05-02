@@ -10,6 +10,8 @@ import android.widget.ListView;
 import com.leo.oscarapp.util.GetDirectors;
 import com.leo.oscarapp.util.GetMovies;
 
+import java.util.HashMap;
+
 public class VoteDirectorActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
@@ -26,7 +28,8 @@ public class VoteDirectorActivity extends AppCompatActivity {
         new GetDirectors(progressDialog, directorList, getApplicationContext()).execute(url);
         directorList.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(VoteDirectorActivity.this, VoteDirectorDetailActivity.class);
-            intent.putExtra("nome",directorList.getAdapter().getItem(i).toString());
+            HashMap<String, Object> obj = (HashMap<String, Object>) directorList.getAdapter().getItem(i);
+            intent.putExtra("nome",(String) obj.get("name"));
             startActivity(intent);
         });
     }
