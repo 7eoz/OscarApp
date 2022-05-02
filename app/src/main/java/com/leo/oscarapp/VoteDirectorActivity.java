@@ -3,6 +3,7 @@ package com.leo.oscarapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -23,5 +24,10 @@ public class VoteDirectorActivity extends AppCompatActivity {
         directorList = findViewById(R.id.directorList);
         progressDialog = new ProgressDialog(this);
         new GetDirectors(progressDialog, directorList, getApplicationContext()).execute(url);
+        directorList.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent intent = new Intent(VoteDirectorActivity.this, VoteDirectorDetailActivity.class);
+            intent.putExtra("nome",directorList.getAdapter().getItem(i).toString());
+            startActivity(intent);
+        });
     }
 }

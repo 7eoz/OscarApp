@@ -2,12 +2,16 @@ package com.leo.oscarapp.util;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.leo.oscarapp.R;
+import com.leo.oscarapp.VoteMovieActivity;
 import com.leo.oscarapp.adapter.MovieAdapter;
 
 import org.json.JSONArray;
