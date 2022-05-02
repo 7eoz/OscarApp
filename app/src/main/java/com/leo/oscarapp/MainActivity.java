@@ -7,10 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -91,38 +87,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        if(item.getItemId() == R.id.itemSave){
-//            ToDoDAO toDoDAO = new ToDoDAO(getApplicationContext());
-//            if(currentToDo != null) { //edit
-//                String strNewToDo = newToDo.getText().toString();
-//                if (!strNewToDo.isEmpty()) {
-//                    ToDo toDo = new ToDo();
-//                    toDo.setToDoName(strNewToDo);
-//                    toDo.setId(currentToDo.getId());
-//                    //update DB
-//                    if(toDoDAO.updateToDo(toDo)) {
-//                        finish();
-//                        Toast.makeText(this, "To Do updated", Toast.LENGTH_SHORT).show();
-//                    } else {
-//                        Toast.makeText(this, "Saving To Do error", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//            } else { //new to do
-//                String strNewToDo = newToDo.getText().toString();
-//                if (!strNewToDo.isEmpty()) {
-//                    ToDo toDo = new ToDo();
-//                    toDo.setToDoName(strNewToDo);
-//                    if(toDoDAO.insertToDo(toDo)) {
-//                        finish();
-//                        Toast.makeText(this, "To Do saved", Toast.LENGTH_SHORT).show();
-//                    } else {
-//                        Toast.makeText(this, "Saving To Do error", Toast.LENGTH_SHORT).show();
-//                    }
-//                } else {
-//                    Toast.makeText(this, "Insert a To Do", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        }
+        if(item.getItemId() == R.id.voteMovieButton) {
+            Intent intent = new Intent(getApplicationContext(), VoteMovieActivity.class);
+            startActivity(intent);
+        } else if(item.getItemId() == R.id.voteDirectorButton) {
+            Intent intent = new Intent(getApplicationContext(), VoteDirectorActivity.class);
+            startActivity(intent);
+        } else if(item.getItemId() == R.id.confirmVotesButton) {
+            Intent intent = new Intent(getApplicationContext(), ConfirmVotesActivity.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 }

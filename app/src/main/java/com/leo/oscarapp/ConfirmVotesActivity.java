@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class ConfirmActivity extends AppCompatActivity {
+public class ConfirmVotesActivity extends AppCompatActivity {
 
     Button envioVotoButton;
     TextView diretorText,filmeText,tokenInput;
@@ -17,7 +17,7 @@ public class ConfirmActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirm);
+        setContentView(R.layout.activity_confirm_votes);
         diretorText = findViewById(R.id.diretorText);
         filmeText = findViewById(R.id.filmeText);
         tokenInput = findViewById(R.id.inputToken);
@@ -59,7 +59,7 @@ public class ConfirmActivity extends AppCompatActivity {
 
                 //---------------------------------------//
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(ConfirmActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(ConfirmVotesActivity.this);
 
                 if (err)
                     builder.setMessage("Token invalido.")

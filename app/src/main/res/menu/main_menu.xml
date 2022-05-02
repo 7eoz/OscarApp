@@ -3,17 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/voteMovie"
-        android:icon="@drawable/movie_icon"
+        android:id="@+id/voteMovieButton"
         android:title="Vote Movie"
         app:showAsAction="always" />
     <item
-        android:id="@+id/voteDirector"
+        android:id="@+id/voteDirectorButton"
         android:icon="@drawable/director_icon"
         android:title="Vote Director"
         app:showAsAction="always" />
     <item
-        android:id="@+id/confirmVotes"
+        android:id="@+id/confirmVotesButton"
         android:icon="@drawable/confirm_icon"
         android:title="Confirm Votes"
         app:showAsAction="always" />
